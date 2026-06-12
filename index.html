@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Youssef & Asmaa | Wedding Invitation</title>
+  <meta name="description" content="Youssef & Asmaa - Wedding Invitation" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Great+Vibes&display=swap&family=Google+Sans+Text:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --background:0 0% 100%;
+      --foreground:20 14% 15%;
+      --primary:27 58% 59%;
+      --primary-foreground:0 0% 100%;
+      --secondary:140 20% 75%;
+      --secondary-foreground:20 14% 15%;
+      --muted:30 30% 96%;
+      --muted-foreground:20 14% 40%;
+      --accent:27 58% 59%;
+      --accent-foreground:0 0% 100%;
+      --border:30 20% 90%;
+      --wedding-cream:47 55% 95%;
+      --wedding-paper:30 27% 96%;
+      --wedding-blush:350 60% 92%;
+      --wedding-sage:140 20% 75%;
+      --wedding-accent:27 58% 59%;
+      --wedding-text:20 14% 15%;
+      --wedding-olive:90 24% 24%;
+      --wedding-gold:30 58% 77%
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Cormorant Garamond',serif;background:hsl(var(--wedding-paper));color:hsl(var(--foreground));line-height:1.7;overflow-x:hidden}
+
+    .script{font-family:'Great Vibes',cursive}
+    .serif{font-family:'Cormorant Garamond',serif}
+    .mont{font-family:'Google Sans Text','Roboto',sans-serif}
+    .container{margin:0 auto;padding:0 24px}
+    .max-w-4xl{max-width:900px}
+    .max-w-3xl{max-width:768px}
+    .max-w-2xl{max-width:640px}
+    .max-w-5xl{max-width:1024px}
+    .mx-auto{margin-left:auto;margin-right:auto}
+    .text-center{text-align:center}
+
+    /* ── HERO ── */
+    .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;overflow:hidden;position:relative;background:hsl(var(--wedding-paper))}
+    .hero-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+    .hero-overlay{position:absolute;inset:0;background:hsl(var(--wedding-paper)/.06);z-index:1;pointer-events:none}
+    .hero-content{position:relative;z-index:2;text-align:center;animation:fadeIn 1s ease}
+    .hero .label{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:hsl(var(--wedding-text));font-weight:500;margin-bottom:12px;opacity:.7}
+    .hero h1{font-family:'Great Vibes',cursive;font-size:clamp(2.8rem,7vw,5rem);color:hsl(var(--wedding-text));font-weight:400;line-height:1.1;margin-bottom:6px}
+    .hero .sep{display:flex;align-items:center;justify-content:center;gap:16px;margin:8px 0}
+    .hero .sep .line{width:48px;height:1px;background:hsl(var(--wedding-text)/.3)}
+    .hero .sep span{color:hsl(var(--wedding-accent));font-size:1.2rem}
+    .hero .date{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:hsl(var(--wedding-text));font-weight:500;margin-bottom:12px;opacity:.7}
+    .hero-bottom{position:absolute;bottom:40px;z-index:2;text-align:center}
+    .hero-bottom .confirm{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:hsl(var(--wedding-text)/.5);border:none;background:none;cursor:pointer;transition:color .3s}
+    .hero-bottom .confirm:hover{color:hsl(var(--wedding-text))}
+    .hero-bottom .arrow{display:block;margin:8px auto 0;color:hsl(var(--wedding-text)/.5);animation:bounce 2s infinite;font-size:.9rem}
+    @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+    @keyframes fadeIn{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}
+
+    /* ── MUTE BUTTON ── */
+    .mute-btn{position:absolute;bottom:100px;right:24px;z-index:3;width:40px;height:40px;border-radius:50%;border:1px solid hsl(var(--wedding-text)/.2);background:hsl(var(--wedding-paper)/.8);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;color:hsl(var(--wedding-text)/.6)}
+    .mute-btn:hover{background:hsl(var(--wedding-paper));color:hsl(var(--wedding-text));border-color:hsl(var(--wedding-text)/.4)}
+    .mute-btn svg{width:18px;height:18px}
+    @media(max-width:500px){.mute-btn{bottom:90px;right:16px;width:36px;height:36px}}
+
+    /* ── STORY ── */
+    .story{padding:80px 0;background:hsl(var(--wedding-cream))}
+    .section-label{font-family:'Great Vibes',cursive;font-size:1.8rem;color:hsl(var(--wedding-accent));margin-bottom:4px}
+    .section-title{font-family:'Great Vibes',cursive;font-size:clamp(2.2rem,4vw,3.2rem);color:hsl(var(--wedding-text));margin-bottom:10px;font-weight:400}
+    .section-sep{display:flex;align-items:center;justify-content:center;gap:16px}
+    .section-sep .line{width:64px;height:1px;background:hsl(var(--wedding-accent)/.3)}
+    .section-sep svg{width:20px;height:20px;color:hsl(var(--wedding-accent));fill:none;stroke:currentColor;stroke-width:2}
+    .tl-wrap{position:relative;margin-top:48px}
+    .tl-line{position:absolute;left:16px;top:0;bottom:10px;width:1px;background:hsl(var(--wedding-accent)/.2)}
+    @media(min-width:768px){.tl-line{left:50%;transform:translateX(-50%)}}
+    .tl-item{position:relative;display:flex;align-items:flex-start;gap:32px;margin-bottom:48px;transition:all .7s ease}
+    .tl-dot{position:absolute;left:10px;width:12px;height:12px;border-radius:50%;background:hsl(var(--wedding-accent));margin-top:8px;transition:all .5s;z-index:2}
+    @media(min-width:768px){.tl-dot{left:50%;transform:translateX(-50%)}}
+    .tl-content{flex:1;padding-left:40px}
+    @media(min-width:768px){.tl-content:nth-child(odd){padding-left:0;padding-right:40px;text-align:right}.tl-item:nth-child(odd){flex-direction:row-reverse}}
+    .tl-year{font-family:'Great Vibes',cursive;font-size:1.8rem;color:hsl(var(--wedding-accent))}
+    .tl-heading{font-family:'Great Vibes',cursive;font-size:1.6rem;color:hsl(var(--foreground));margin:4px 0 6px}
+    .tl-desc{font-style:italic;color:hsl(var(--foreground)/.7);font-size:1.1rem;line-height:1.8}
+    .tl-spacer{display:none}
+    @media(min-width:768px){.tl-spacer{display:block;flex:1}}
+    .story-text{max-width:680px;margin:48px auto 0;text-align:center}
+    .story-text p{font-style:italic;color:hsl(var(--foreground)/.7);font-size:1.1rem;line-height:1.9}
+    .doves-wrap{text-align:center;margin-top:40px}
+    .doves-wrap img{max-width:280px;width:100%;height:auto}
+
+    /* ── COUNTDOWN ── */
+    .countdown{background:hsl(var(--wedding-paper));padding:60px 0;text-align:center}
+    .countdown-grid{display:flex;justify-content:center;gap:clamp(12px,3vw,32px);margin-top:32px}
+    .cbox{display:flex;flex-direction:column;align-items:center;min-width:64px}
+    .cbox .num{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,3rem);color:hsl(var(--wedding-text));line-height:1;font-weight:500}
+    .cbox .lbl{font-family:'Google Sans Text','Roboto',sans-serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:hsl(var(--wedding-text)/.5);margin-top:6px}
+    .csep{color:hsl(var(--wedding-accent)/.4);font-size:clamp(1.2rem,3vw,2rem);align-self:flex-start;padding-top:4px}
+    .cd-location{font-family:'Google Sans Text','Roboto',sans-serif;font-size:.7rem;letter-spacing:.12em;color:hsl(var(--wedding-text)/.45);margin-top:20px;text-transform:uppercase}
+
+    /* ── PROGRAM ── */
+    .program{background:hsl(var(--wedding-olive));padding:60px 0}
+    .program .section-title{color:hsl(var(--wedding-gold))}
+    .program .section-label{color:hsl(var(--wedding-gold))}
+    .program .section-sep .line{background:hsl(var(--wedding-gold)/.2)}
+    .program .section-sep svg{color:hsl(var(--wedding-gold))}
+    .program-sub{color:hsl(var(--background)/.7);font-size:.9rem;margin-top:4px;letter-spacing:.02em}
+    .pg-grid{display:none;max-width:900px;margin:0 auto;position:relative}
+    @media(min-width:768px){.pg-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}}
+    .pg-bar{position:absolute;top:56px;left:4%;right:4%;height:1px;background:hsla(0,0%,100%,.2)}
+    .pg-item{display:flex;flex-direction:column;align-items:center;text-align:center}
+    .pg-time{background:hsl(var(--wedding-gold));color:hsl(var(--wedding-olive));padding:4px 10px;border-radius:999px;font-size:.7rem;font-weight:600;margin-bottom:12px;white-space:nowrap;transition:background .3s}
+    .pg-item:hover .pg-time{background:hsl(var(--wedding-accent))}
+    .pg-icon{width:52px;height:52px;border-radius:50%;border:2px solid hsla(0,0%,100%,.2);display:flex;align-items:center;justify-content:center;color:hsl(var(--wedding-gold));margin-bottom:12px;z-index:2;background:hsl(var(--wedding-olive));transition:all .3s}
+    .pg-item:hover .pg-icon{border-color:hsl(var(--wedding-gold));transform:scale(1.1)}
+    .pg-icon svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2}
+    .pg-title{font-size:.95rem;color:#fff;line-height:1.3}
+    .pg-desc{font-size:.7rem;color:hsla(0,0%,100%,.5);font-style:italic}
+
+    .pg-mobile{max-width:450px;margin:0 auto}
+    @media(min-width:768px){.pg-mobile{display:none}}
+    .pm-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px;position:relative}
+    .pm-line{position:absolute;left:18px;top:44px;bottom:-16px;width:1px;background:hsla(0,0%,100%,.1)}
+    .pm-item:last-child .pm-line{display:none}
+    .pm-icon{width:38px;height:38px;border-radius:50%;border:2px solid hsla(0,0%,100%,.2);display:flex;align-items:center;justify-content:center;color:hsl(var(--wedding-gold));flex-shrink:0;background:hsl(var(--wedding-olive))}
+    .pm-icon svg{width:18px;height:18px}
+    .pm-info{flex:1;padding-top:2px}
+    .pm-time{background:hsl(var(--wedding-gold));color:hsl(var(--wedding-olive));padding:1px 8px;border-radius:999px;font-size:.6rem;font-weight:600;display:inline-block;margin-bottom:2px}
+    .pm-title{font-size:.9rem;color:#fff}
+    .pm-desc{font-size:.75rem;color:hsla(0,0%,100%,.5);font-style:italic}
+
+    /* ── GIFTS ── */
+    .gifts{background:hsl(var(--wedding-cream));padding:70px 0}
+
+    .show-iban{font-size:.85rem;color:hsl(var(--muted-foreground));cursor:pointer;text-decoration:underline;text-underline-offset:4px;text-decoration-color:hsl(var(--border));transition:color .3s;border:none;background:none}
+    .show-iban:hover{color:hsl(var(--foreground));text-decoration-color:hsl(var(--foreground))}
+
+    /* ── DETAILS ── */
+    .details{background:#fff;padding:60px 0}
+    .details .section-label{font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:hsl(var(--wedding-accent));font-family:'Google Sans Text','Roboto',sans-serif;margin-bottom:12px}
+    .details-card{background:hsl(var(--wedding-cream));border-radius:16px;padding:32px 24px;text-align:center;margin-bottom:24px}
+    .details-icon{width:56px;height:56px;border-radius:50%;background:hsl(var(--wedding-accent)/.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+    .details-icon svg{width:28px;height:28px;color:hsl(var(--wedding-accent))}
+    .details-card h3{font-size:1.3rem;color:hsl(var(--foreground));margin-bottom:12px}
+    .details-info{color:hsl(var(--foreground)/.7);font-size:.95rem;line-height:1.8}
+    .details-info .mont{font-size:.85rem}
+    .details-map{border-radius:12px;overflow:hidden;margin:16px 0;aspect-ratio:16/9}
+    .details-map iframe{width:100%;height:100%;border:0}
+    .details-desc{font-size:.85rem;color:hsl(var(--foreground)/.6);margin:16px 0;line-height:1.7}
+    .details-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+    .details-btns a{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:8px;font-size:.85rem;text-decoration:none;font-weight:500;transition:all .3s}
+    .btn-maps{border:1px solid hsl(var(--wedding-accent)/.3);color:hsl(var(--wedding-accent))}
+    .btn-maps:hover{background:hsl(var(--wedding-accent)/.1)}
+    .btn-cal{border:1px solid hsl(var(--wedding-accent)/.3);color:hsl(var(--wedding-accent))}
+    .btn-cal:hover{background:hsl(var(--wedding-accent)/.1)}
+    .btn-maps svg,.btn-cal svg{width:14px;height:14px}
+    .dress-card{background:hsl(var(--wedding-olive));border-radius:16px;padding:32px 24px;text-align:center}
+    .dress-card h3{font-size:1.3rem;color:hsl(var(--wedding-gold));margin-bottom:8px}
+    .dress-card .type{color:hsl(var(--wedding-gold));font-size:.95rem;margin-bottom:4px}
+    .dress-card .desc{color:hsl(var(--wedding-gold)/.7);font-size:.85rem}
+
+    /* ── RSVP ── */
+
+
+    /* ── DIVIDER ── */
+    .fountain-divider{background:hsl(var(--wedding-cream));text-align:center;padding:8px 0}
+    .fountain-divider img{max-width:280px;width:100%;height:auto}
+    @media(min-width:768px){.fountain-divider img{max-width:400px}}
+
+    /* ── TRAVEL ── */
+
+    .hotels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px}
+    @media(max-width:640px){.hotels-grid{grid-template-columns:1fr}}
+    .hotel-card{background:#fff;border-radius:12px;padding:24px;transition:box-shadow .3s}
+    .hotel-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.06)}
+    .hotel-card h4{font-size:1.2rem;color:hsl(var(--foreground));margin-bottom:4px}
+    .hotel-card .stars{color:hsl(var(--wedding-gold));font-size:.8rem;margin-bottom:6px}
+    .hotel-card .dist{display:flex;align-items:center;gap:6px;color:hsl(var(--foreground)/.5);font-size:.85rem;margin-bottom:8px}
+    .hotel-card .dist svg{width:12px;height:12px;color:hsl(var(--wedding-accent))}
+    .hotel-card .note{color:hsl(var(--foreground)/.7);font-size:.88rem}
+    .things-section{background:hsl(var(--wedding-olive));border-radius:16px;padding:40px;margin-bottom:48px}
+    .things-section h3{font-size:1.5rem;color:#fff;text-align:center;margin-bottom:10px}
+    .things-section .things-desc{color:hsla(0,0%,100%,.7);text-align:center;margin-bottom:24px}
+    .things-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;color:hsla(0,0%,100%,.7)}
+    @media(max-width:500px){.things-grid{grid-template-columns:1fr}}
+    .things-grid .item{display:flex;align-items:center;gap:8px}
+    .things-grid .dot{width:8px;height:8px;border-radius:50%;background:hsl(var(--wedding-gold));flex-shrink:0}
+    .questions-section{background:hsl(var(--wedding-accent)/.29);border-radius:16px;padding:40px;text-align:center}
+    .questions-section h3{font-size:1.5rem;color:hsl(var(--foreground));margin-bottom:10px}
+    .questions-section .q-desc{color:hsl(var(--foreground)/.7);margin-bottom:24px}
+    .questions-section .contact-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+    .questions-section .contact-links a{display:flex;align-items:center;gap:8px;color:hsl(var(--wedding-accent));text-decoration:none;font-size:.9rem;transition:color .3s}
+    .questions-section .contact-links a:hover{color:rgba(210,143,91,.8)}
+
+    /* ── FOOTER ── */
+    footer{background:hsl(var(--wedding-olive));color:#fff;text-align:center;padding:48px 24px}
+    footer h2{font-family:'Great Vibes',cursive;font-size:2.2rem;color:hsl(var(--wedding-gold));margin-bottom:8px}
+    footer .date{color:hsl(var(--wedding-gold)/.6);margin-bottom:24px;font-size:.9rem}
+    footer .made-with{display:flex;align-items:center;justify-content:center;gap:8px;color:hsl(var(--wedding-gold)/.6);font-size:.9rem}
+    footer .made-with svg{width:16px;height:16px;fill:hsl(var(--wedding-gold));stroke:hsl(var(--wedding-gold))}
+    footer .hash{margin-top:32px;padding-top:32px;border-top:1px solid hsl(var(--wedding-gold)/.2);color:hsl(var(--wedding-gold)/.3);font-size:.75rem}
+
+    /* ── WELCOME OVERLAY (VIDEO) ── */
+    .welcome-overlay{position:fixed;inset:0;z-index:9999;background:#000;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:opacity .8s ease}
+    .welcome-overlay.fade-out{opacity:0;pointer-events:none}
+    .welcome-overlay video{width:100%;height:100%;object-fit:cover}
+    .welcome-hint{position:absolute;bottom:40px;left:0;right:0;text-align:center;color:rgba(255,255,255,.7);font:400 13px/1 'Google Sans Text',sans-serif;letter-spacing:2px;text-transform:uppercase;opacity:1;transition:opacity .6s ease;pointer-events:none}
+    .welcome-hint.hide{opacity:0}
+
+    /* ── ANIMATIONS ── */
+    .fade-up{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+    .fade-up.visible{opacity:1;transform:translateY(0)}
+  </style>
+</head>
+<body>
+  <!-- ═══ WELCOME OVERLAY ═══ -->
+  <div class="welcome-overlay" id="welcomeOverlay">
+    <video id="welcomeVideo" playsinline webkit-playsinline autoplay muted preload="auto">
+      <source src="hero-video.mp4" type="video/mp4">
+    </video>
+    <div class="welcome-hint" id="welcomeHint">Tap to watch</div>
+  </div>
+  <audio id="bgMusic" loop preload="auto" style="position:fixed;opacity:0;pointer-events:none;z-index:-1" src="background-music.mp3"></audio>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <video class="hero-bg-video" playsinline webkit-playsinline autoplay muted loop preload="auto" >
+      <source src="intro-video.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="label mont">We're Getting Married</p>
+      <h1>Youssef <span style="font-family:'Great Vibes',cursive;margin:0 8px">&amp;</span> Asmaa</h1>
+      <div class="sep"><span class="line"></span><span>✦</span><span class="line"></span></div>
+      <p class="date mont">27 June 2026</p>
+    </div>
+    <div class="hero-bottom">
+      <div class="arrow">⌄</div>
+    </div>
+    <div class="mute-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.364 18.364a9 9 0 0 0 0-12.728"/></svg>
+    </div>
+  </section>
+
+  <!-- ═══ COUNTDOWN ═══ -->
+  <section class="countdown">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-label">Counting Down</p>
+        <h2 class="section-title">Until We Say "I Do"</h2>
+        <div class="section-sep">
+          <span class="line"></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span class="line"></span>
+        </div>
+      </div>
+      <div class="countdown-grid" id="countdownGrid">
+        <div class="cbox"><span class="num" id="cdDays">00</span><span class="lbl">Days</span></div>
+        <span class="csep">:</span>
+        <div class="cbox"><span class="num" id="cdHours">00</span><span class="lbl">Hours</span></div>
+        <span class="csep">:</span>
+        <div class="cbox"><span class="num" id="cdMins">00</span><span class="lbl">Minutes</span></div>
+        <span class="csep">:</span>
+        <div class="cbox"><span class="num" id="cdSecs">00</span><span class="lbl">Seconds</span></div>
+      </div>
+      <p class="cd-location">27 June 2026 · 8:00 PM · Burj Al Arab Hall, Fayoum</p>
+    </div>
+  </section>
+
+  <!-- ═══ STORY ═══ -->
+  <section class="story" id="story">
+    <div class="container max-w-4xl">
+      <div class="text-center">
+        <p class="section-label">Our Journey</p>
+        <h2 class="section-title">Our Love Story</h2>
+        <div class="section-sep">
+          <span class="line"></span>
+          <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          <span class="line"></span>
+        </div>
+      </div>
+      <div class="story-text fade-up">
+        <p>Our journey was not always perfect, yet it became beautiful because we shared every step together. We discovered that true happiness is found in life's simplest moments, and that the right person can make every moment more meaningful. Today, we begin a new chapter—one written with love, strengthened by partnership, and inspired by the future we will build together. We would be delighted to celebrate this special day in your presence.</p>
+      </div>
+      <div class="doves-wrap">
+        <img src="doves.png" alt="Wedding doves">
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PROGRAM ═══ -->
+  <section class="program" id="program">
+    <div class="container max-w-5xl">
+      <div class="text-center">
+        <h2 class="section-title">Day Program</h2>
+        <p class="program-sub">What we have prepared for you</p>
+        <div class="section-sep" style="margin-top:16px">
+          <span class="line"></span>
+          <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          <span class="line"></span>
+        </div>
+      </div>
+
+      <!-- Desktop -->
+      <div class="pg-grid">
+        <div class="pg-bar"></div>
+        <div class="pg-item fade-up"><span class="pg-time">4:30 PM</span><div class="pg-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><span class="pg-title">Guest Arrival</span><span class="pg-desc">Welcome and reception</span></div>
+        <div class="pg-item fade-up"><span class="pg-time">5:00 PM</span><div class="pg-icon"><svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div><span class="pg-title">Ceremony</span><span class="pg-desc">Civil wedding</span></div>
+        <div class="pg-item fade-up"><span class="pg-time">6:00 PM</span><div class="pg-icon"><svg viewBox="0 0 24 24"><path d="M8 22h8"/><path d="M7 10h10"/><path d="M12 15v7"/><path d="M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z"/></svg></div><span class="pg-title">Cocktail</span><span class="pg-desc">Aperitifs and drinks</span></div>
+        <div class="pg-item fade-up"><span class="pg-time">11:00 PM</span><div class="pg-icon"><svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div><span class="pg-title">Party</span><span class="pg-desc">Let's dance!</span></div>
+        <div class="pg-item fade-up"><span class="pg-time">2:30 AM</span><div class="pg-icon"><svg viewBox="0 0 24 24"><path d="M5.8 11.3 2 22l10.7-3.79"/><path d="M4 3h.01"/><path d="M22 8h.01"/><path d="M15 2h.01"/><path d="M22 20h.01"/><path d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10"/><path d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11c-.11.7-.72 1.22-1.43 1.22H17"/><path d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98C9.52 4.9 9 5.52 9 6.23V7"/><path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z"/></svg></div><span class="pg-title">End</span><span class="pg-desc">Goodbye</span></div>
+      </div>
+
+      <!-- Mobile -->
+      <div class="pg-mobile">
+        <div class="pm-item fade-up"><span class="pm-line"></span><div class="pm-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="pm-info"><span class="pm-time">8:00 PM</span><div class="pm-title">Guest Arrival</div><div class="pm-desc">Welcome and reception</div></div></div>
+        <div class="pm-item fade-up"><span class="pm-line"></span><div class="pm-icon"><svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div><div class="pm-info"><span class="pm-time">8:30 PM</span><div class="pm-title">Ceremony</div><div class="pm-desc">Civil wedding</div></div></div>
+        <div class="pm-item fade-up"><span class="pm-line"></span><div class="pm-icon"><svg viewBox="0 0 24 24"><path d="M8 22h8"/><path d="M7 10h10"/><path d="M12 15v7"/><path d="M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z"/></svg></div><div class="pm-info"><span class="pm-time">10:00 PM</span><div class="pm-title">Cocktail</div><div class="pm-desc">Aperitifs and drinks</div></div></div>
+        <div class="pm-item fade-up"><span class="pm-line"></span><div class="pm-icon"><svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div><div class="pm-info"><span class="pm-time">11:00 PM</span><div class="pm-title">Party</div><div class="pm-desc">Let's dance!</div></div></div>
+        <div class="pm-item fade-up"><span class="pm-line" style="display:none"></span><div class="pm-icon"><svg viewBox="0 0 24 24"><path d="M5.8 11.3 2 22l10.7-3.79"/><path d="M4 3h.01"/><path d="M22 8h.01"/><path d="M15 2h.01"/><path d="M22 20h.01"/><path d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10"/><path d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11c-.11.7-.72 1.22-1.43 1.22H17"/><path d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98C9.52 4.9 9 5.52 9 6.23V7"/><path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z"/></svg></div><div class="pm-info"><span class="pm-time">12:00 AM</span><div class="pm-title">End</div><div class="pm-desc">Goodbye</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DETAILS ═══ -->
+  <section class="details" id="details">
+    <div class="container max-w-3xl">
+      <div class="text-center">
+        <p class="section-label">Join Us</p>
+        <h2 class="section-title" style="margin-bottom:8px">Event Details</h2>
+        <p style="color:rgba(42,42,42,.7);margin-bottom:32px">We can't wait to celebrate this special day with you. Here's everything you need to know.</p>
+      </div>
+      <div class="details-card">
+        <div class="details-icon"><svg viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg></div>
+        <h3>Wedding Ceremony</h3>
+        <div class="details-info">
+          <p><span class="mont" style="font-weight:500">8:00 PM</span></p>
+          <p>Burj Al Arab Hall</p>
+          <p style="font-size:.85rem">Fayoum, Egypt</p>
+        </div>
+        <div class="details-map">
+          <iframe src="https://maps.google.com/maps?q=Burj+Al+Arab+Hall+Fayoum+Egypt&t=&z=15&ie=UTF8&output=embed" loading="lazy" style="width:100%;height:100%;min-height:300px;border:0;border-radius:12px"></iframe>
+        </div>
+        <p class="details-desc">Join us as we begin our forever, celebrating a love story that has led us to this beautiful moment.</p>
+        <div class="details-btns">
+          <a class="btn-maps" href="https://maps.google.com/?daddr=Burj+Al+Arab+Hall+Fayoum+Egypt" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>Open in Maps</a>
+          <a class="btn-cal" href="javascript:void(0)" onclick="addToCalendar()"><svg viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><path d="M21 13V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8"/><path d="M3 10h18"/><path d="M16 19h6"/><path d="M19 16v6"/></svg>Add to Calendar</a>
+        </div>
+      </div>
+      <div class="dress-card">
+        <h3>Dress Code</h3>
+        <p class="type">Formal / Black Tie Optional</p>
+        <p class="desc">We kindly ask guests to dress elegantly for our celebration.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ FOUNTAIN DIVIDER ═══ -->
+  <div class="fountain-divider">
+    <img src="fountain-divider.png" alt="Decorative fountain">
+  </div>
+
+  <!-- ═══ TRAVEL ═══ -->
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <h2>Youssef & Asmaa</h2>
+    <p class="date">27 June 2026</p>
+    <div class="made-with">
+      <span>Made with</span>
+      <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+      <span>for our special day</span>
+    </div>
+    <div class="hash">#YoussefAndAsmaa2026</div>
+  </footer>
+
+  <script>
+    /* Preload background music & hero video */
+    var bgMusic = document.getElementById('bgMusic');
+    bgMusic.volume = 0.3;
+    document.addEventListener('DOMContentLoaded', function(){
+      var hv = document.querySelector('.hero-bg-video');
+      if(hv) hv.load();
+    });
+
+  </script>
+  <script>
+    /* Mute button */
+    (function(){
+      var btn = document.querySelector('.mute-btn');
+      var muted = true;
+      var volIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.364 18.364a9 9 0 0 0 0-12.728"/></svg>';
+      var muteIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></svg>';
+      function toggleMute(){
+        muted = !muted;
+        document.querySelectorAll('video').forEach(function(v){
+          v.muted = muted;
+        });
+        if(bgMusic){ bgMusic.muted = muted; }
+        btn.innerHTML = muted ? muteIcon : volIcon;
+      }
+      if(btn) btn.addEventListener('click', toggleMute);
+    })();
+
+    /* Welcome overlay (video) */
+    (function(){
+      var overlay = document.getElementById('welcomeOverlay');
+      var wv = document.getElementById('welcomeVideo');
+      var entered = false;
+      function enterSite(){
+        if(entered) return;
+        entered = true;
+        overlay.classList.add('fade-out');
+        setTimeout(function(){ overlay.style.display = 'none'; }, 800);
+        /* Play hero background video */
+        var hv = document.querySelector('.hero-bg-video');
+        if(hv){ var p = hv.play(); if(p&&p.catch) p.catch(function(){}); }
+        /* Start background music */
+        bgMusic.play().catch(function(){});
+      }
+      if(overlay) overlay.addEventListener('click', function(){
+        if(wv && wv.paused){
+          wv.play().catch(function(){});
+          bgMusic.play().catch(function(){});
+          /* Start buffering hero video early */
+          var hv = document.querySelector('.hero-bg-video');
+          if(hv) hv.play().catch(function(){});
+        }
+      });
+      if(wv){
+        wv.addEventListener('ended', enterSite);
+        wv.addEventListener('playing', function(){
+          var wh = document.getElementById('welcomeHint');
+          if(wh) wh.classList.add('hide');
+          bgMusic.play().catch(function(){});
+        });
+      }
+    })();
+    /* Manual loop for hero background on mobile */
+    var heroVideo = document.querySelector('.hero-bg-video');
+    if(heroVideo){
+      heroVideo.addEventListener('ended', function(){ this.play().catch(function(){}); });
+      heroVideo.addEventListener('error', function(){ console.log('hero video error'); });
+    }
+
+    /* Countdown */
+    (function(){
+      var target = Date.UTC(2026,5,27,18,0,0);
+      function tick(){
+        var now = Date.now();
+        var diff = Math.max(0, target - now);
+        document.getElementById('cdDays').textContent = String(Math.floor(diff/86400000)).padStart(2,'0');
+        document.getElementById('cdHours').textContent = String(Math.floor((diff%86400000)/3600000)).padStart(2,'0');
+        document.getElementById('cdMins').textContent = String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
+        document.getElementById('cdSecs').textContent = String(Math.floor((diff%60000)/1000)).padStart(2,'0');
+      }
+      tick();
+      setInterval(tick, 1000);
+    })();
+
+    function addToCalendar(){
+      var start = '20260627T140000Z';
+      var end = '20260627T230000Z';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Youssef&Asmaa//Wedding//EN\r\nBEGIN:VEVENT\r\nUID:' + Date.now() + '@youssefandasmaa\r\nDTSTART:' + start + '\r\nDTEND:' + end + '\r\nSUMMARY:Youssef & Asmaa Wedding\r\nDESCRIPTION:Wedding ceremony and reception\r\nLOCATION:Burj Al Arab Hall - Fayoum - Egypt\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics], {type:'text/calendar;charset=utf-8'});
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'youssef-asmaa-wedding.ics';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
